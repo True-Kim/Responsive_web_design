@@ -1,0 +1,808 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700,900&display=swap&subset=korean');
+@import url('https://fonts.googleapis.com/css?family=Playball&display=swap&subset=latin-ext');
+
+*{box-sizing: border-box;}
+
+body{
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    min-width: 1280px;
+    font-size: 20px;
+    letter-spacing: -2px;
+    color: #fff;
+    text-align: center;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+}
+header, section{ width: 100%; }
+.inner{ width: 80%; margin: 0 auto; }
+.row{ display: flex; flex-direction: row; }
+ul, li{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+a:visited{
+    color: #fff;
+}
+button{
+    outline: none;
+}
+
+/*header*/
+header{
+    position: fixed;
+    background: #004566;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px 5%;
+    z-index: 10;
+}
+.hideBar{
+    transition: all 0.7s 0.3s ease;
+    transform: translate(0, -100%);
+    /* y값을 -100%로 해서 숨기게 됨 */
+}
+select option{
+    color: #000;
+}
+.htitle{
+    font-size: 2em;
+    height: 100px;
+    color: #fff;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 900;
+}
+.htitle span:last-child{
+    font-size: 0.5em;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 900;
+    margin: 5px 0 0 0;
+    display: block;
+}
+.nav-icon,
+.sub_menu{
+    display: none;
+}
+header .hlogo{
+    width: 100px;
+    height: 33px;
+    background: url("../images/KAC_logo.png") 50% 100% no-repeat;
+    background-size: 100%;
+    position: absolute;
+    top: 48%;
+    left: 5%;
+    cursor: pointer;
+}
+header .hlogo:hover{
+    background: url("../images/KAC_logo.png") 50% 0% no-repeat;
+    background-size: 100%;
+}
+header select,
+header .global button{
+    width: 100px;
+    height: 30px;
+    display: inline-block;
+    border: 2px solid #fff;
+    background: none;
+    cursor: pointer;
+    padding: 3px;
+    color: #fff;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 900;
+}
+header .global button{
+    width: 50px;
+}
+
+/* section01 공항소개 */
+.section01{
+    width: 100%;
+    height: 100vh;
+}
+.section01 .photo{
+    width: 100%;
+    height: 100%;
+    background: url("../images/airport/cheongju.jpg") 0% 50% no-repeat;
+    background-size: 110% 100%;
+    position: relative;
+}
+.section01 .photo .history{
+    width: 100%;
+    height: 30.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+}
+.section01 .photo .history .slide{
+    position: relative;
+    width: 80%;
+    margin: 30px auto;
+    overflow: hidden;
+}
+.section01 .photo .history .slide ul{
+    width: 100%;
+    display: flex;
+    position: absolute;
+    top: 20%;
+}
+.section01 .photo .history .slide ul li{
+    display: flex;
+    position: relative;
+}
+.section01 .photo .history .slide ul li span{
+    display: inline-block;
+    letter-spacing: 0px;
+}
+.history .slide ul li span:first-child{
+    width: 40%;
+    height: 90px;
+    font-size: 2em;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+}
+.history .slide ul li span:last-child{
+    width: 60%;
+    height: 90px;
+    text-align: left;
+    font-size: 0.8em;
+    margin-top: 10px;
+}
+.history button{
+    position: absolute;
+    bottom: 40%;
+    background: none;
+    border: none;
+    box-shadow: 0px 0px 10px #fff;
+}
+.history button.prev{
+    left: 5%;
+    cursor: pointer;
+}
+.history button.next{
+    right: 5%;
+    cursor: pointer;
+}
+.history button i{
+    color: #fff;
+    font-size: 2em;
+    line-height: 50px;
+}
+
+/* section02 - 공항소개 */
+.section02{
+    width: 100%;
+    color: #111;
+    background: url("../images/airport/cheongjuAirport.png") 0% 0% no-repeat;
+    background-size: 100% 900px;
+}
+.bTitle{
+    padding: 70px 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.5em;
+    font-weight: 900;
+}
+.bTitle span{
+    display: block;
+}
+.sub_section{
+    height: 695px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 50px;
+}
+.sub_section .copy{
+    width: 30%;
+    font-size: 0.8em;
+    position: absolute;
+}
+.sub_section .copy:nth-child(2){
+    bottom: 50%;
+    left: 35%;
+}
+.sub_section .copy:last-child{
+    bottom: 30%;
+    right: 0%;
+}
+.sub_section .copy span:first-child{
+    font-size: 1.3em;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    background: #660012;
+    padding: 20px;
+    color: #fff;
+    display: block;
+}
+.sub_section .copy span:nth-child(2){
+    display: block;
+    background: rgb(255, 255, 255);
+    padding: 50px;
+    text-align: left;
+}
+
+
+/* section02 - 위치 및 교통 */
+
+.sub_section02{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sub_section02 .sTitle{
+    width: 100%;
+    padding: 50px;
+    font-size: 1.3em;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    display: block;
+}
+.sub_section02 .explain{
+    width: 50%;
+    font-size: 0.8em;
+    margin: 0 auto;
+}
+.sub_section02 .explain .ex_t{
+    font-size: 1.3em;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    display: block;
+}
+.sub_section02 .sub_content{
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+/* tab style */
+.openTabVertical{
+    width: 80%;
+    margin: 0 auto;
+}
+.vehicle{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+ /* tab button */
+.vehicle .tab{
+    width: 100px;
+    height: 100%;
+    background: #004566;
+}
+button.tabButton{
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    padding: 0px 16px;
+    text-align: center;
+    border: none;
+    float: none;
+    outline: 0;
+    background: none;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    position: relative;
+    cursor: pointer;
+}
+button.tabButton i{
+    font-size: 2em;
+    line-height: 10px;
+    display: block;
+}
+button.tabButton.tablinkOn{
+    background: #fff;
+    color: #000;
+    position: relative;
+}
+button.tabButton.tablinkOn::after{
+    width: 3px;
+    height: 100%;
+    content: "";
+    display: block;
+    background: #660012;
+    position: absolute;
+    left: 0px;
+    bottom: 0;
+}
+/* tab contents */
+.contents{
+    width: calc(100% - 100px);
+    background: #fff;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.container map{
+    width: 50%;
+    height: 450px;
+}
+.container .map_ex{
+    width: 50%;
+}
+.container .map_ex span{
+    padding: 0 20px;
+    display: block;
+    text-align: left;
+    font-size: 0.8em;
+    letter-spacing: 0px;
+}
+.container .map_ex span:first-child,
+.container .map_ex span.bold{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1em;
+    font-weight: 700;
+}
+.container .map_ex span.bold{
+    padding-bottom: 5px;
+}
+.container .map_ex span.map_ex_t{
+    margin-bottom: 10px;
+}
+.container .col{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.container .col span{
+    color: #666;
+    font-size: 0.8em;
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    margin: 0 0 0 20px;
+    text-align: left;
+}
+.container .col .photo_info{
+    width: 100%;
+    height: 350px;
+}
+.container .col .photo_info.bus{
+    background: url("../images/tab/bus_info.png") 50% 50% no-repeat;
+    background-size: 100% 100%;
+}
+.container .col .photo_info.train{
+    background: url("../images/tab/train_info.png") 50% 50% no-repeat;
+    background-size: 100% 100%;
+}
+.container .col .photo_info.taxi{
+    background: url("../images/tab/taxi_info.png") 50% 50% no-repeat;
+    background-size: 100% 100%;
+}
+.container .col .explain{
+    width: 100%;
+    display: block;
+    color:#666B85;
+    font-size: 0.8em;
+    font-weight:normal;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.1);
+    margin: 20px;
+}
+table{
+    width: 50%;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 5px;
+}
+.container:nth-child(3) .col table{
+    margin: 24px;
+}
+.col table{
+    width: 100%;
+}
+tr{
+    width: 100%;
+    color:#666B85;
+    font-size: 0.8em;
+    font-weight:normal;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid #666;
+}
+.none{
+    border-bottom: 0px;
+}
+table th,
+table td{
+    padding: 5px;
+    text-align: center;
+}
+table td{
+    letter-spacing: -0.8px;
+}
+tr:hover td{
+    background:#4E5066;
+    color:#fff;
+}
+tr:last-child{
+    border-bottom:none;
+}
+tr:nth-child(odd) td{
+    background:#EBEBEB;
+}
+tr:nth-child(odd):hover td{
+    background:#4E5066;
+}
+tr:last-child th:first-child,
+.fee{
+    border-bottom-left-radius:3px;
+}
+tr:last-child td:last-child{
+    border-bottom-right-radius:3px;
+}
+
+th{
+    color:#D5DDE5;
+    background:#1b1e24;
+    font-weight: 100;
+    padding: 24px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+tr:first-child th:first-child {
+    text-align: center;
+    border-top-left-radius:3px;
+}
+tr:nth-child(12) th{
+    border-bottom-left-radius: 3px;
+}
+tr:first-child th:last-child {
+    border-top-right-radius:3px;
+}
+td{
+    padding: 20px;
+    text-align: left;
+    /* vertical-align: middle; */
+    font-weight:300;
+    font-size: 0.8em;
+}
+
+/* section03 - 시설*/
+.section03{
+    justify-content: space-between;
+    align-items: center;
+    background: #002D64;
+    padding: 0px 0px 100px;
+    z-index: 100;
+}
+.cards{
+    justify-content: space-between;
+}
+.cards .card{
+    width: 19%;
+    height: 320px;
+    border: 2px solid #fff;
+    text-align: center;
+    margin: 30px 0 0 0;
+    box-shadow: 10px 10px 5px #000;
+    cursor: pointer;
+}
+.cards .card:hover{
+    margin: -20px 0 0 0;
+    box-shadow: 10px 60px 5px #000;
+    transition: all .2s ease-in-out;
+}
+.cards .card .photo{
+    align-items: center;
+    width: 100%;
+    height: 87%;
+    background: url("../images/sisul.jpg"), rgba(0, 0, 0, 0.8);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-size: cover;
+}
+.cards .card:nth-child(2) .photo{
+    background: url("../images/finance.jpg"), rgba(0, 0, 0, 0.8);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-size: cover;
+}
+.cards .card:nth-child(3) .photo{
+    background: url("../images/city.jpg"), rgba(0, 0, 0, 0.8);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-size: cover;
+}
+.cards .card:nth-child(4) .photo{
+    background: url("../images/handicap.jpg"), rgba(0, 0, 0, 0.8);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-size: cover;
+}
+.cards .card:nth-child(5) .photo{
+    background: url("../images/parking.jpg"), rgba(0, 0, 0, 0.8);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-size: cover;
+}
+.cards .card .photo .logo{
+    width: 100%;
+    height: 100%;
+    background: url("../images/icon/baseline_local_airport_white_48dp.png") 50% 50% no-repeat;
+    background-size: 45%;
+}
+.cards .card:nth-child(2) .photo .logo{
+    background: url("../images/icon/atm.png") 50% 50% no-repeat;
+    background-size: 35%;
+}
+.cards .card:nth-child(3) .photo .logo{
+    background: url("../images/icon/free.png") 50% 50% no-repeat;
+    background-size: 45%;
+}
+.cards .card:nth-child(4) .photo .logo{
+    background: url("../images/icon/baseline_accessible_forward_white_48dp.png") 50% 50% no-repeat;
+    background-size: 45%;
+}
+.cards .card:nth-child(5) .photo .logo{
+    background: url("../images/icon/baseline_local_parking_white_48dp.png") 50% 50% no-repeat;
+    background-size: 45%;
+}
+.cards .card .tel{
+    height: 13%;
+    padding: 10px;
+    font-size: 0.8em;
+    color: #333;
+    font-weight: 800;
+    background: #f2f2f3;
+    display: flex;
+    justify-content: space-between; 
+}
+
+/* section04 - 지역행사 */
+.section04{
+    width: 100%;
+    height: 2040px;
+    z-index: 90;
+}
+.full{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+}
+.leftBanner,
+.leftBanner2{
+    width: 20%;
+    height: 450px;
+    max-height: 450px;
+    background: #ed7d31;
+    position: absolute;
+    right: -10px;
+    border-radius: 0 0 0 50px;
+}
+.leftBanner .BTitle,
+.leftBanner2 .BTitle{
+    line-height: 70px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 900;
+    font-size: 2.5em;
+    color: #fff;
+    padding: 70px 10%;
+    text-align: left;
+    position: absolute;
+    top: 10px;
+}
+.leftBanner2 .BTitle{
+    padding: 50px 10%;
+}
+.wrap{
+    width: 80%;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 70px 20px;
+    position: absolute;
+    left: 0%;
+    background: #f2f2f3;
+}
+.wrap .card{
+    width: 33%;
+    height: 360px;
+    margin: 20px 0 0 0;
+}
+.wrap .card:first-child,
+.wrap .card:nth-child(2),
+.wrap .card:nth-child(3){
+    margin: unset;
+}
+.wrap .card .photo{
+    width: 100%;
+    height: 100%;
+    background:url("../images/fest/craftbiennale.jpg") 50% 50% no-repeat;
+    background-size: cover;
+}
+.wrap .card:nth-child(2) .photo{
+    background:url("../images/fest/jikji.jpg") 50% 50% no-repeat;
+    background-size: cover;
+}
+.wrap .card:nth-child(3) .photo{
+    background:url("../images/fest/cjculturenight.jpg") 50% 50% no-repeat;
+    background-size: cover;
+}
+.wrap .card:nth-child(4) .photo{
+    background:url("../images/fest/chnam.JPG") 50% 50% no-repeat;
+    background-size: cover;
+}
+.wrap .card:nth-child(5) .photo{
+    background:url("../images/fest/chwon.jpg") 50% 50% no-repeat;
+    background-size: cover;
+}
+.wrap .card:nth-child(6) .photo{
+    background: url("../images/fest/chaps.PNG") 50% 50% no-repeat;
+    background-size: cover;
+}
+.wrap .card:nth-child(7) .photo{
+    background:url("../images/fest/youngth.jpg") 10% 0% no-repeat;
+    background-size: cover;
+}
+.wrap .card:nth-child(8) .photo{
+    background:url("../images/fest/zhong.jpg") 40% 10% no-repeat;
+    background-size: cover;
+}
+.wrap .card:nth-child(9) .photo{
+    background:url("../images/fest/bigf.jpg") 50% 50% no-repeat;
+    background-size: cover;
+}
+.wrap .card:nth-child(10) .photo{
+    background:url("../images/fest/bookf.jpg") 50% 59% no-repeat;
+    background-size: cover;
+}
+.wrap .card:nth-child(11) .photo{
+    background:url("../images/fest/odi.jpg") 50% 50% no-repeat;
+    background-size: cover;
+}
+.wrap .card:nth-child(12) .photo{
+    background:url("../images/fest/munhwa10.PNG") 50% 40% no-repeat;
+    background-size: cover;
+}
+.wrap .card:nth-child(13) .photo{
+    background:url("../images/fest/sejong2.jpg") 50% 0% no-repeat;
+    background-size: cover;
+}
+.wrap .card:nth-child(14) .photo{
+    background:url("../images/fest/chnamchun.jpg") 50% 30% no-repeat;
+    background-size: cover;
+}
+.wrap .card:nth-child(15) .photo{
+    background:url("../images/fest/samsam.jpg") 50% 50% no-repeat;
+    background-size: cover;
+}
+.wrap .card .name,
+.wrap .card .date{
+    color: #fff;
+    font-size: 1.5em;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    text-shadow: 0 5px 10px #000;
+}
+.wrap .card .name{
+    padding: 135px 0 0 0;
+}
+.wrap .card a:visited{
+    color: #fff;
+}
+.wrap .card:hover .photo{
+    background: rgba(255,255,255,0.8);
+}
+.wrap .card:hover .name,
+.wrap .card:hover .date{
+    color: #002D64;
+    text-shadow: none;
+}
+/* section 04 지역행사 mobile ver */
+.full2{
+    display: none;
+}
+button.topbt{
+    width: 40px;
+    height: 40px;
+    line-height: 36px;
+    position: fixed;
+    bottom: 1.5%;
+    right: 1.5%;
+    border: none;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 0px 10px #fff;
+    color: #fff;
+    font-size: 0.5em;
+    font-weight: 900;
+    outline: none;
+    cursor: pointer;
+}
+button.topbt:hover{
+    background: rgba(0, 0, 0, 0.8);
+    color: #f2f2f3;
+}
+
+/* footer */
+
+footer{
+    width: 100%;
+    height: 150px;
+    background: #333;
+    font-size: 0.6em;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #ccc;
+    z-index: 20;
+}
+.footerRow{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px 0 0 0;
+}
+.footer .menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+}
+.footer .menu ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.footer .menu ul li{
+    margin: 0 50px 0 0;
+    position: relative;
+}
+.footer .menu ul li:last-child{
+    margin: unset;
+}
+.footer .menu ul li::after{
+    width: 1px;
+    height: 50%;
+    background: #ccc;
+    display: block;
+    content: "";
+    position: absolute;
+    top: 8px;
+    right: -25px;
+}
+.footer .menu ul li:last-child::after{
+    display: none;
+}
+.footer .menu span{
+    text-align: left;
+}
+.footer .menu span:nth-child(2){
+    margin: 10px 0 0 0;
+}
+.footer a{
+    color: #ccc;
+}
+.footer a:visited{
+    color: #ccc;
+}
+.footer a:hover{
+    border-bottom: 1px solid #ccc;
+    transition: all .2s ease-out;
+}
+.footerLogo{
+    width: 300px;
+    height: 30px;
+    background: url("../images/KAC_korean.png") 96% 50% no-repeat;
+    background-size: 50%;
+}

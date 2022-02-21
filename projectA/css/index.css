@@ -1,0 +1,526 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800|Noto+Sans+KR:400,500,700,900|Open+Sans:400,400i,600,600i,700,700i,800,800i&display=swap&subset=korean');
+
+*{box-sizing: border-box;}
+body{
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+.flt_r{
+    float: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.flt_l{
+    float: left;    
+}
+section{
+    width: 100%;
+    height: 640px;
+    padding: 5%;
+    position: relative;
+}
+
+/* section01(intro) */
+section.sec01{
+    height: 100vh;
+    background: #d0d0d2;
+}
+.backW{
+    background: #fff;
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.3);
+    padding: 8%;
+}
+article.art01{
+    width: 100%;
+    height: 100%;
+}
+.left_side, .right_side{
+    width: 50%;
+    display: block;
+    float: left;
+}
+/* art01 left */
+.version span{
+    display: block;
+    font-size: 4em;
+    font-weight: 800;
+}
+.title span{
+    display: block;
+    font-size: 3em;
+}
+.title::after{
+    display: block;
+    content: "";
+    width: 30px;
+    height: 6px;
+    background: #000;
+    margin-top: 50px;
+}
+.myself{
+    width: 30%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.myself span{
+    display: block;
+}
+/* art01 right */
+.right_side{
+    height: 640px;
+}
+.collage{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.collage a{
+    position: absolute;
+    max-width: 220px;
+    padding: 10px;
+    background-color: rgb(255,255,255);
+    transform: rotate(-7deg);
+    transition: all 0.2s linear;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+.collage a:nth-child(2){
+    transform: rotate(6deg);
+    left: 30%;
+}
+.collage a:nth-child(3){
+    transform: rotate(-15deg);
+    left: 60%;
+}
+.collage a:nth-child(4){
+    transform: rotate(-9deg);
+    top: 150px;
+    left: 0%;
+}
+.collage a:nth-child(5){
+    transform: rotate(10deg);
+    top: 150px;
+    left: 30%;
+}
+.collage a:nth-child(6){
+    transform: rotate(-7deg);
+    top: 150px;
+    left: 60%;
+}
+.collage a:nth-child(7){
+    transform: rotate(-15deg);
+    top: 300px;
+    left: 45%;
+}
+.collage a:nth-child(8){
+    transform: rotate(-15deg);
+    top: 300px;
+    left: 15%;
+}
+.collage a:nth-child(9){
+    transform: rotate(7deg);
+    top: 300px;
+    left: 50%;
+}
+.collage a img{
+    max-width: 100%;
+    max-height: 100%;
+    filter: grayscale(100%);
+}
+.collage a:hover{ 
+    z-index: 999;
+    transform: rotate(0deg);
+    transition: all 0.2s linear;
+}
+.collage a:hover > img{
+    filter: grayscale(0%);
+}
+
+/* section02(projectA) */
+.secTitle{
+    width: 40%;
+}
+.secTitle span{
+    display: block;
+}
+.num{
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 5em;
+    letter-spacing: -2px;
+    color: #666;
+}
+.st{
+    font-size: 1.5em;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+}
+.explain{
+    width: 60%;
+    text-align: justify;
+    margin: 5% 0;
+    font-size: 0.9em;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.explain span:nth-child(2){
+    font-style: italic;
+    color: #666;
+    margin-top: 30px;
+    letter-spacing: -0.1px;
+}
+.explain a{
+    color: #000;
+    text-decoration: none;
+    font-weight: 900;
+}
+.explain a:visited{
+    color: #000;
+    text-decoration: none;
+}
+.arrowL{
+    position: absolute;
+    left: 5%;
+    bottom: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    animation-name: animate_arrowL;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.arrowL i.material-icons{
+    font-size: 2.5em;
+}
+@keyframes animate_arrowL{
+    0% {
+        transform: translate(30px, 0);
+        opacity: .3;
+    }
+    50% {
+        transform: translate(0px, 0);
+        opacity: 1;
+    }
+    80% {
+        transform: translate(20px, 0);
+        opacity: .5;
+    }
+    100% {
+        transform: translate(30px, 0);
+        opacity: .3;
+    }
+}
+.color{
+    width: 30%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.color div{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+.sec02 .color div:first-child{
+    background: #002d64;
+}
+.sec02 .color div:nth-child(2){
+    background: #004566;
+}
+.sec02 .color div:nth-child(3){
+    background: #901800;
+}
+.sec02 .color div:nth-child(4){
+    background: #ed7d31;
+}
+.linkCard{
+    width: 50%;
+    height: 400px;
+    filter: grayscale(100%);
+    position: relative;
+    z-index: 0;
+}
+.sec02 .linkCard{
+    background: url("../images/_Photo\ by\ Liona\ Toussaint\ on\ Unsplash.jpg")50% 50% no-repeat;
+    background-size: cover;
+}
+.mockUp{
+    width: 540px;
+    height: 400px;
+    position: absolute;
+    right: 37%;
+    bottom: 10%;
+    z-index: 1;
+}
+.sec02 .mockUp{
+    background: url("../images/A-content.png") 50% 50% no-repeat;
+    background-size: 100%;
+}
+
+/* section03(projectB) */
+section.sec03{
+    background: #ddd;
+    text-align: right;
+}
+.sec03 .explain span:nth-child(2){
+    text-align: right;
+} 
+.arrowR{
+    position: absolute;
+    right: 5%;
+    bottom: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    animation-name: animate_arrowR;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.arrowR i.material-icons{
+    font-size: 2.5em;
+}
+@keyframes animate_arrowR{
+    0% {
+        transform: translate(-30px, 0);
+        opacity: .3;
+    }
+    50% {
+        transform: translate(0px, 0);
+        opacity: 1;
+    }
+    80% {
+        transform: translate(-20px, 0);
+        opacity: .5;
+    }
+    100% {
+        transform: translate(-30px, 0);
+        opacity: .3;
+    }
+}
+.sec03 .color{
+    float: right;
+}
+.sec03 .color div:first-child{
+    background: #e5d7aa;
+}
+.sec03 .color div:nth-child(2){
+    background: #374369;
+}
+.sec03 .color div:nth-child(3){
+    background: #fff;
+}
+.sec03 .color div:nth-child(4){
+    background: #000;
+}
+.sec03 .linkCard{
+    background: url("../../projectB/images/home/cjExhibiton3.jpg") 50% 50% no-repeat;
+    background-size: cover;
+}
+.sec03 .mockUp{
+    background: url("../images/B-content.png") 50% 50% no-repeat;
+    background-size: 100%;
+}
+
+/* section04(projectC) */
+.sec04 .color div:first-child{
+    background: #ec6700;
+}
+.sec04 .color div:nth-child(2){
+    background: #f0e15f;
+}
+.sec04 .color div:nth-child(3){
+    background: #78d2d5;
+}
+.sec04 .color div:nth-child(4){
+    background: #eb6d70;
+}
+.sec04 .linkCard{
+    background: url("../images/yuna.jpg") 0% 35% no-repeat;
+    background-size: cover;
+}
+.sec04 .mockUp{
+    background: url("../images/C-content.png") 50% 50% no-repeat;
+    background-size: 100%;
+}
+
+/* section05(programs) */
+.sec05 .secTitle{
+    width: 20%;
+}
+.container{
+    margin-top: 150px;
+    width: 80%;
+    text-align: center;
+    float: right;
+}
+.container .box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.container .box .chart{
+    width: 200px;
+    height: 200px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.mtxt{
+    display: none;
+}
+.icon{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+.icon.html{
+    background: url("../images/index/software_icon.png") -10% 50% no-repeat;
+    background-size: cover;
+}
+.icon.css{
+    background: url("../images/index/software_icon.png") 50% 50% no-repeat;
+    background-size: cover;
+}
+.icon.jQuery{
+    background: url("../images/index/software_icon.png") 110% 50% no-repeat;
+    background-size: cover;
+}
+.icon.photoshop{
+    background: url("../images/index/photoshop_CC_icon.png") 50% 50% no-repeat;
+    background-size: 70px 70px;
+}
+.icon.illustrator{
+    background: url("../images/index/illustrator_CC_icon.png") 50% 50% no-repeat;
+    background-size: 70px 70px;
+}
+.container .box .chart span{
+    display: block;
+    position: absolute;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    color: #374369;
+}
+
+/* footer */
+footer{
+    height: 50px;
+    background: #d0d0d2;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* tablet */
+@media screen and (min-width: 748px) and (max-width: 1024px){
+    body{
+        font-size: 14px;
+    }
+    .collage{
+        height: 500px;
+        margin: 160px 0;
+    }
+    /* section02~ */
+    .mockUp {
+        width: 440px;
+        right: 15%;
+        bottom: 0%;
+    }
+    .color{
+        width: 60%;
+    }
+    /* section05 */
+    section.sec05{
+        height: 800px;
+    }
+    .container .box {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+
+/* mobile */
+@media screen and (min-width: 375px) and (max-width: 747px){
+    body{
+        font-size: 12px;
+    }
+    /* section01  */
+    /* art01 right */
+    .right_side{
+        width: 40%;
+    }
+    .collage a{
+        padding: 5px;
+    }
+    .collage a:first-child,
+    .collage a:nth-child(2),
+    .collage a:nth-child(3){
+        top: 150px;
+    }
+    .collage a:nth-child(4),
+    .collage a:nth-child(5),
+    .collage a:nth-child(6){
+        top: 300px;
+    }
+    .collage a:nth-child(7),
+    .collage a:nth-child(8),
+    .collage a:nth-child(9){
+        top: 450px;
+    }
+
+    /* section02 */
+    .secTitle{
+        width: 50%;
+    }
+    .explain {
+        width: 85%;
+    }
+    .mockUp{
+        width: 65%;
+        height: 155px;
+        right: 0%;
+        bottom: 25%;
+    }
+    .color{
+        width: 60%;
+    }
+
+    /* section04 */
+    .sec05{
+        height: 350px;
+    }
+    .container{
+        width: 100%;
+        margin-top: 50px;
+    }
+    .container .box .chart{
+        width: 80px;
+        height: 80px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    .icon{
+        display: none !important;
+    }
+    .mtxt{
+        display: block;
+    }
+}
