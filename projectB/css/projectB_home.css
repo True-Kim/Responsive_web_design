@@ -1,0 +1,729 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR|Noto+Serif+KR&display=swap');
+@font-face { font-family: 'HealthsetBambooStd'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/HealthsetBambooStd.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'KOMACON'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.2/KOMACON.woff') format('woff'); font-weight: normal; font-style: normal; }
+*{ box-sizing: border-box; }
+body{
+    padding: 0;
+    margin: 0;
+    min-width: 1280px;
+    font-size: 16px;
+    color: #fff;
+    font-family: 'Noto Sans KR', sans-serif;
+    letter-spacing: -1px;
+}
+ul,li,a{ 
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+a{
+    color: #fff;
+}
+a:visited{
+    color: #fff;
+}
+header, section, footer{ width: 100%; }
+
+/* header */
+header{
+    background: #000;
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed !important; /* 중요하게 먹어야하는 부분에 important 추가하기*/
+    top: 0px;
+    right: 0px;
+    z-index: 90;
+}
+header .topLogo{
+    width: 19%;
+    min-width: 300px;
+    font-size: 27px;
+    /* font-weight: 900; */
+    display: block;
+    text-align: center;
+    font-family: 'KOMACON';
+}
+header .topLogo span{
+    display: block;
+}
+header .topLogo span:last-child{
+    font-size: 0.3em;
+    letter-spacing: 1px;
+}
+header .inner .mMenubt{
+    display: none;
+}
+/* nav */
+nav{
+    width: 65%;
+    height: 90px;
+    line-height: 90px;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 90;
+}
+nav ul.gnb{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+}
+nav ul.gnb .gnbMenu{
+    width: 15%;
+    font-weight: 800;
+    position: relative;
+}
+
+/* mobile ver subnav */
+nav ul.gnb .gnbMenu .mSnb{
+    display: none;
+}
+
+/* pc ver subnav */
+nav .subMenu{
+    display: flex;
+    justify-content: space-between;
+    width: 0;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    position: absolute;
+    top: 90px;
+    right: 0;
+    z-index: 100;
+}
+nav ul.gnb:hover .subMenu{
+    width: 100%;
+    height: 100vh;
+    transition: all 0.5s ease-in-out;
+}
+nav .subMenu ul{
+    width: 15%;
+}
+nav .subMenu ul li{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #fff;
+}
+nav .subMenu ul li a{
+    color: #fff;
+    position: relative;
+}
+nav .subMenu ul li a:visited{
+    color: #fff;
+}
+nav .subMenu ul li a::after{
+    width: 0px;
+    height: 1px;
+    background: #fff;
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+nav .subMenu ul li a:hover::after{
+    width: 100%;
+    transition: width .3s ease-in-out;
+}
+
+section{
+    height: 100vh;
+    display: block;
+    overflow: visible;
+    background-attachment: fixed;
+    background-size: cover;
+}
+/* section01 */
+section.section01{
+    position: relative;
+    background-image: url("../images/home/baekje6.jpg");
+    background-size: 100% 100vh;
+}
+section.section01 .contents{
+    color: #fff;
+    position: fixed;
+    display: inline-block;
+    top: 25%;
+    right: 70%;
+    font-size: 3em;
+    text-align: right;
+    z-index: 10;
+}
+section.section01 .contents span{
+    display: block;
+    font-family: 'HealthsetBambooStd';
+}
+/* paging */
+.paging{
+    position: fixed;
+    right: 5px;
+    margin-top: 450px;
+    width: 3%;
+    height: 100px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 50;
+}
+.paging li{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    margin: 0 20px;
+    background: #e5d7aa;
+    outline: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+.paging li.on{
+    background: #374369;
+}
+/* scroll button */
+.scrollBt{
+    width: 100%;
+    position: absolute;
+    bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.demo a{
+    z-index: 2;
+    display: block;
+    transform: translate(0, -50%);
+    color: #fff;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    transition: opacity .3s;
+    padding-top: 60px;
+}
+.demo a:hover{
+    opacity: .5;
+}
+.demo a span{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 30px;
+    height: 50px;
+    margin-left: -15px;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    box-sizing: border-box;
+}
+.demo a span::before{
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    content: '';
+    width: 6px;
+    height: 6px;
+    margin-left: -3px;
+    background-color: #fff;
+    border-radius: 100%;
+    animation: sdb1 2s infinite;
+    box-sizing: border-box;
+}
+@keyframes sdb1{
+    0%{
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+    40%{
+        opacity: 1;
+    }
+    80%{
+        transform: translate(0, 20px);
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+/* section 02 */
+section.section02{
+    background: url("https://picsum.photos/1200/800?image=516") 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 20;
+}
+/* section.section02 .button{
+    width: 100%;
+    position: absolute;
+    top: -90px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: none;
+}
+section.section02 .button button{
+    width: 15%;
+    height: 90px;
+    font-size: 1.2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+    color: #fff;
+    background: rgba(0,0,0,0.8);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+section.section02 .button button .arrow{
+    width: 80px;
+    height: 10px;
+    background: url("../images/home/arrow_left.png") 0% 100% no-repeat;
+}
+section.section02 .button button .arrow.right{
+    background: url("../images/home/arrow_right.png") 100% 100% no-repeat;
+}
+.button button:hover{
+    opacity: .8;
+} */
+section.section02 .contents{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 0 5%;
+    position: relative;
+}
+section.section02 .contents span.back{
+    position: absolute;
+    font-size: 2em;
+    color: #f4f4f4;
+    top: 0;
+    right: 0;
+    z-index: 10;
+}
+section.section02 .contents .cardphoto{
+    width: 30%;
+    min-width: 360px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    padding: 1.2%;
+}
+section.section02 .contents .cardphoto:nth-child(2){
+    background: url("../images/home/cjExhibiton3.jpg") 50% 50% no-repeat;
+    background-size: 150% 150%;
+}
+section.section02 .contents .cardphoto:nth-child(3){
+    background: url("../images/home/baekjeExhi.jpg") 50% 50% no-repeat;
+    background-size: 100% 100%;
+}
+section.section02 .contents .cardphoto:nth-child(4){
+    background: url("../images/home/exhibition.jpg") 50% 50% no-repeat;
+    background-size: 100% 100%;
+}
+section.section02 .contents .cardphoto .line{
+    width: 100%;
+    height: 100%;
+    border: 2px solid #e5d7aa;
+    position: relative;
+}
+section.section02 .contents .cardphoto .line span{
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #e5d7aa;
+}
+section.section02 .contents .cardphoto:nth-child(3) .line{
+    border: 2px solid #374369;
+}
+section.section02 .contents .cardphoto:nth-child(3) .line span{
+    color: #374369;
+}
+section.section02 .contents .cardphoto a .cover{
+    width: 100%;
+    height: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0));
+}
+section.section02 .contents .cardphoto.blue a .cover{
+    background-image: linear-gradient(to top, rgba(255,255,255,0.5), rgba(255,255,255,0));
+}
+section .contents .cardphoto .hidden{
+    width: 100%;
+    font-size: 1em;
+    text-align: right;
+    position: absolute;
+    right: 0;
+    bottom: -40%;
+    /* bottom: 0; */
+    padding: 40px 40px 25px;
+    color: #e5d7aa;
+    font-weight: 600;
+}
+section .contents .cardphoto .hidden span{
+    margin-left: 20px;
+    position: relative;
+}
+section .contents .cardphoto .hidden span::after{
+    width: 2px;
+    height: 50%;
+    content: "";
+    background: #e5d7aa;
+    position: absolute;
+    left: -11px;
+    top: 7px;
+}
+section .contents .cardphoto.blue .hidden span{
+    color: #374369;
+}
+section .contents .cardphoto.blue .hidden span::after{
+    background: #374369;
+}
+section .contents .cardphoto .hidden span:first-child::after{
+    display: none;
+}
+section.section02 .contents .cardphoto:hover a .cover{
+    height: 100%;
+    transition: all 0.7s ease-in-out;
+}
+section.section02 .contents .cardphoto:hover .hidden{
+    right: 0;
+    bottom: 0;
+    transition: all 0.7s ease-in-out;
+}
+
+/* section 03 */
+section.section03{
+    width: 100%;
+    height: 200vh;
+    background: #000;
+    position: relative;
+    z-index: 20;
+}
+section.section03 .contents{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+section.section03 .contents span{
+    display: inline-block;
+}
+section.section03 .contents .leftAlign,
+section.section03 .contents .rightAlign{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+section.section03 .contents .rightAlign{
+    flex-direction: row-reverse;
+}
+section.section03 .contents .leftAlign .collage,
+section.section03 .contents .rightAlign .collage{
+    width: 60%;
+    height: 70%;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+}
+section.section03 .contents .leftAlign .collage .photo{
+    width: 100%;
+    height: 100%;
+    background: url("../images/home/relic.jpg") 50% 50% no-repeat;
+    background-size: 120%;
+}
+section.section03 .contents .leftAlign .collage .photo:nth-child(2),
+section.section03 .contents .rightAlign .collage .photo1:nth-child(2){
+    width: 30%;
+    height: 40%;
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    background-position: 0% 0%;
+    background-size: 300%;
+    background-repeat: no-repeat;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+section.section03 .contents .leftAlign .collage .photo:nth-child(3),
+section.section03 .contents .rightAlign .collage .photo1:nth-child(3){
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    bottom: -25px;
+    right: -80px;
+    background-position: 100% 100%;
+    background-size: 200%;
+    background-repeat: no-repeat;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+section.section03 .contents .leftAlign .collage .photo:nth-child(4),
+section.section03 .contents .rightAlign .collage .photo1:nth-child(4){
+    width: 40%;
+    height: 30%;
+    position: absolute;
+    top: 170px;
+    left: 170px;
+    background-position: 30% 50%;
+    background-size: 200%;
+    background-repeat: no-repeat;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+section.section03 .contents .leftAlign .collage .photo:nth-child(5),
+section.section03 .contents .rightAlign .collage .photo1:nth-child(5){
+    width: 30%;
+    height: 60%;
+    position: absolute;
+    bottom: 80px;
+    right: 220px;
+    background-position: 70% 80%;
+    background-size: 300%;
+    background-repeat: no-repeat;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+section.section03 .contents .leftAlign .collage .photo:nth-child(6),
+section.section03 .contents .rightAlign .collage .photo1:nth-child(6){
+    width: 40%;
+    height: 40%;
+    position: absolute;
+    bottom: -30px;
+    left: -30px;
+    background-position: 15% 90%;
+    background-size: 300%;
+    background-repeat: no-repeat;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+section.section03 .contents .leftAlign .collage:hover .photo:nth-child(2){
+    top: 0px;
+    left: 0px;
+    transition: all .5s ease-out;
+}
+section.section03 .contents .leftAlign .collage:hover .photo:nth-child(3){
+    bottom: 5px;
+    right: -50px;
+    transition: all .5s ease-out;
+}
+section.section03 .contents .leftAlign .collage:hover .photo:nth-child(4){
+    top: 200px;
+    left: 200px;
+    transition: all .5s ease-out;
+}
+section.section03 .contents .leftAlign .collage:hover .photo:nth-child(5){
+    bottom: 80px;
+    right: 250px;
+    transition: all .5s ease-out;
+}
+section.section03 .contents .leftAlign .collage:hover .photo:nth-child(6){
+    bottom: 0px;
+    left: 0px;
+    transition: all .5s ease-out;
+}
+
+section.section03 .contents .rightAlign .collage .photo1{
+    width: 100%;
+    height: 100%;
+    background: url("../images/home/activity3.jpg") 50% 50% no-repeat;
+    background-size: 120%;
+}
+section.section03 .contents .rightAlign .collage:hover .photo1:nth-child(2){
+    top: 0px;
+    left: 0px;
+    transition: all .5s ease-out;
+}
+section.section03 .contents .rightAlign .collage:hover .photo1:nth-child(3){
+    bottom: 5px;
+    right: -50px;
+    transition: all .5s ease-out;
+}
+section.section03 .contents .rightAlign .collage:hover .photo1:nth-child(4){
+    top: 200px;
+    left: 200px;
+    transition: all .5s ease-out;
+}
+section.section03 .contents .rightAlign .collage:hover .photo1:nth-child(5){
+    bottom: 50px;
+    right: 250px;
+    transition: all .5s ease-out;
+}
+section.section03 .contents .rightAlign .collage:hover .photo1:nth-child(6){
+    bottom: 0px;
+    left: 0px;
+    transition: all .5s ease-out;
+}
+section.section03 .contents .leftAlign span,
+section.section03 .contents .rightAlign span{
+    font-size: 5rem;
+    font-family: 'HealthsetBambooStd';
+    position: absolute;
+}
+section.section03 .contents .leftAlign span{
+    right: 15%;
+}
+section.section03 .contents .rightAlign span{
+    left: 15%;
+}
+
+/* section 04 */
+section.section04{
+    height: 700px;
+    position: relative;
+    background: #fff;
+    z-index: 40;
+    margin-top: -50px;
+}
+div.sub_title{
+    text-align: center;
+    padding-top: 50px;
+    color: #000;
+    font-size: 1.5em;
+    font-weight: 600;
+    font-family: 'Noto Serif KR', serif;
+    text-shadow: 0px 0px 22px #fff;
+}
+div.sub_title span{
+    margin: 10px;
+    display: inline-block;
+    position: relative;
+}
+div.sub_title span:last-child{
+    display: block;
+}
+div.sub_title span:first-child::after{
+    width: 100%;
+    height: 3px;
+    content: "";
+    background: #000;
+    display: block;
+    position: absolute;
+    bottom: -15px;
+}
+/* banner slide */
+.banner{
+    display: block;
+    position: relative;
+    width: 100%;
+}
+.banner .banner_wrap{
+    position: relative;
+    width: 1100px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.banner .banner_wrap ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.banner .banner_wrap ul li{
+    float: left;
+}
+.banner .banner_wrap ul li a{
+    display: block;
+    height: 400px;
+    line-height: 400px;
+    text-align: center;
+    margin: 0 10px;
+    color: black;
+}
+.banner .banner_wrap ul li.one{
+    background: url("../images/home/logo/cultural_heritage_admin[Converted].png") 50% 50% no-repeat;
+    background-size: 50%;
+}
+.banner .banner_wrap ul li.two{
+    background: url("../images/home/logo/ministry_of_culture.png") 50% 50% no-repeat;
+    background-size: 50%;
+}
+.banner .banner_wrap ul li.three{
+    background: url("../images/home/logo/korean_craft_museum.png") 50% 50% no-repeat;
+    background-size: 50%;
+}
+.banner .banner_wrap ul li.four{
+    background: url("../images/home/logo/chungbuk.png") 50% 50% no-repeat;
+    background-size: 50%;
+}
+.banner .banner_wrap ul li.five{
+    background: url("../images/home/logo/cheongju3.png") 50% 50% no-repeat;
+    background-size: 50%;
+}
+.banner .banner_wrap ul li.six{
+    background: url("../images/home/logo/cheongju_cultural_industry.png") 50% 50% no-repeat;
+    background-size: 50%;
+}
+
+button.topbt{
+    display: none;
+}
+
+/* footer */
+footer{
+    height: 150px;
+    background: #000;
+    padding: 50px 10% 0;
+}
+footer .footerLogo{
+    width: 19%;
+    min-width: 300px;
+    font-size: 27px;
+    float: right;
+    text-align: center;
+    font-family: 'KOMACON';
+    color: #999;
+}
+footer .footerLogo span{
+    display: block;
+}
+footer .footerLogo span:last-child{
+    font-size: 0.3em;
+    letter-spacing: 1px;
+}
+footer .addr{
+    width: 60%;
+    font-size: 0.7em;
+    letter-spacing: -0.5px;
+}
+footer .addr span{
+    display: block;
+}
+
+/* tablet ver */
+@media screen and (min-width:767px) and (max-width:1280px) {
+    section.section01 .contents{
+        text-shadow: 0px 0px 10px #000;
+    }
+    section.section02 .button button .arrow {
+        width: 50px;
+    }
+    section.section03 .contents .leftAlign span{
+        right: 10%;
+    }
+    section.section03 .contents .rightAlign span{
+        left: 10%;
+    }
+}

@@ -1,0 +1,264 @@
+@charset "UTF-8";
+*{ box-sizing: border-box; }
+body {
+    min-width: 640px;
+    font-size: 14px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* header */
+header{
+    width: 100%;
+    position: fixed;
+}
+header .topLogo{
+    margin: 0 auto;
+}
+
+/* moble menu button */
+.mMenubt{
+    display: block;
+    width: 50px;
+    height: 10px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    z-index: 90;
+}
+.mMenubt span{
+    display: block;
+    position: absolute;
+    height: 8px;
+    width: 100%;
+    background: #332F25;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+.mMenubt span:nth-child(1){
+    top: 0px;
+}
+.mMenubt span:nth-child(2),
+.mMenubt span:nth-child(3){
+    top: 18px;
+}
+.mMenubt span:nth-child(4){
+    top: 36px;
+}
+.mMenubt.open span{
+    background: #332F25;
+}
+.mMenubt.open span:nth-child(1){
+    top: 18px;
+    width: 0%;
+    left: 50%;
+}
+.mMenubt.open span:nth-child(2){
+    transform: rotate(45deg);
+}
+.mMenubt.open span:nth-child(3){
+    transform: rotate(-45deg);
+}
+.mMenubt.open span:nth-child(4){
+    top: 18px;
+    width: 0%;
+    left: 50%;
+}
+/* nav */
+nav{
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    top: 90px;
+    z-index: 90;
+    background: #332F25;
+    display: none;
+}
+nav ul.gnb{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: left;
+    padding: 50px 10% 0;
+    color: #fff;
+}
+nav ul.gnb .gnbMenu{
+    width: 100%;
+    font-weight: 800;
+    color: #fff;
+}
+nav ul.gnb .gnbMenu .title{
+    display: block;
+    float: left;
+    width: 30%;
+    font-size: 1.2em;
+}
+
+/* moble ver sub menu */
+nav ul.gnb .gnbMenu .mSnb{
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: #fff;
+}
+nav ul.gnb .gnbMenu .mSnb li{
+    margin: 0 0 0 30px;
+}
+nav ul.gnb .gnbMenu .mSnb a{
+    color: #fff;
+}
+nav ul.gnb .gnbMenu .mSnb a:visited{
+    color: #fff;
+}
+
+/* PC ver sub menu */
+nav.displayOn .subMenu{
+    display: none !important;
+}
+.displayOn{
+    display: block;
+}
+
+/* section 01 */
+section {
+    height: 900px;
+}
+div.sub_title {
+    padding: 50px;
+    font-size: 1.3em;
+}
+section.section01 .contents{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+section.section01 .backSpan{
+    top: 140px;
+    right: -55px;
+}
+section.section01 .contents{
+    display: flex;
+    flex-direction: column;
+}
+section.section01 .contents .photo{
+    width: 100%;
+    margin: 0;
+}
+section.section01 .contents .exp{
+    width: 100%;
+}
+span.copy{
+    padding: 0;
+}
+span.exhTitle{
+    font-size: 1.3em;
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin: 35px 0;
+}
+section.section01 .contents span.copy::before{
+    top: -40px;
+    width: 30px;
+}
+
+/* section 02 ~ 03 */
+section.section02, section.section03{
+    height: 1100px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+}
+section.section02 .box,
+section.section03 .box{
+    width: 65%;
+    height: 650px;
+}
+section.section02 .box .photo,
+section.section03 .box .photo{
+    margin: 25px;
+}
+section.section03 .box span.copy{
+    padding: 0;
+}
+section.section02 .backPhoto,
+section.section03 .backPhoto{
+    width: 100%;
+    background-size: 50%;
+}
+section.section02,
+section.section03{
+    padding: 0;
+}
+section.section02 .box .exp span.ex::after, 
+section.section03 .box .exp span.ex::after{
+    width: 30px;
+}
+
+/* section 04 ~ 05 */
+section.section04, 
+section.section05{
+    height: 850px;
+    padding: 0 60px;
+}
+section.section04 .backSpan{
+    top: 163px;
+    right: -80px;
+}
+section.section05 .backSpan {
+    top: 122px;
+    left: -50px;
+}
+section.section04 .contents{
+    flex-direction: column-reverse;
+    justify-content: center;
+    text-align: right;
+}
+section.section05 .contents{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+section.section04 .contents .photo{
+    width: 100%;
+    height: 300px;
+    background: url("../images/sub2/chung.png") 50% 50% no-repeat;
+    background-size: 90%;
+    margin: 0 auto;
+}
+section.section05 .contents .photo{
+    width: 100%;
+    height: 300px;
+}
+section.section04 .contents span.exhTitle::after,
+section.section05 .contents span.exhTitle::before{
+    height: 30px;
+}
+section.section04 .contents .exp{
+    margin: 50px;
+}
+span.addex{
+    margin-bottom: 30px;
+}
+/* top button */
+button.topbt{
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: #000;
+    color: #fff;
+    outline: none;
+    border: none;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    padding: 0;
+    z-index: 80;
+}

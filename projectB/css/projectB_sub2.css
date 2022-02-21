@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR|Noto+Serif+KR&display=swap');
+@font-face { font-family: 'KOMACON'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.2/KOMACON.woff') format('woff'); font-weight: normal; font-style: normal; }
+*{ box-sizing: border-box; }
+body{
+    padding: 0;
+    margin: 0;
+    min-width: 1280px;
+    font-size: 16px;
+    color: #000;
+    letter-spacing: -1px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+ul,li,a{ 
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+a{
+    color: #000;
+}
+a:visited{
+    color: #000;
+}
+header, section, footer{ width: 100%; }
+
+/* header */
+header{
+    background: #fff;
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 90;
+    transition: transform 0.7s 0.3s ease;
+}
+header .topLogo{
+    width: 19%;
+    min-width: 300px;
+    font-size: 27px;
+    /* font-weight: 900; */
+    display: block;
+    text-align: center;
+    font-family: 'KOMACON';
+}
+header .topLogo a{
+    color: #000;
+}
+header .topLogo span{
+    display: block;
+}
+header .topLogo span:last-child{
+    font-size: 0.3em;
+    letter-spacing: 1px;
+}
+header .inner .mMenubt{
+    display: none;
+}
+.hideBar{
+    transform: translate(0, -100%);
+    /* y값을 -100%로 해서 숨기게 됨 */
+}
+
+/* nav */
+nav{
+    width: 65%;
+    height: 90px;
+    line-height: 90px;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 100;
+    transition: transform 0.7s 0.3s ease;
+}
+nav ul.gnb{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+}
+nav ul.gnb .gnbMenu{
+    width: 15%;
+    font-weight: 800;
+    position: relative;
+    color: #374369;
+}
+
+/* moble ver sub menu */
+nav ul.gnb .gnbMenu .mSnb{
+    display: none;
+}
+
+/* PC ver sub menu */
+nav .subMenu{
+    display: flex;
+    justify-content: space-between;
+    width: 0;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.9);
+    overflow: hidden;
+    position: absolute;
+    top: 90px;
+    right: 0;
+    z-index: 100;
+}
+nav ul.gnb:hover .subMenu{
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+}
+nav .subMenu ul{
+    width: 15%;
+}
+nav .subMenu ul li{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #000;
+}
+nav .subMenu ul li a{
+    color: #000;
+    position: relative;
+}
+nav .subMenu ul li a:visited{
+    color: #000;
+}
+nav .subMenu ul li a::after{
+    width: 0px;
+    height: 1px;
+    background: #000;
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+nav .subMenu ul li a:hover::after{
+    width: 100%;
+    transition: width .3s ease-in-out;
+}
+
+section{
+    height: 100vh;
+    text-align: center;
+}
+/* section01 */
+section.section01{
+    margin-top: 90px;
+    position: relative;
+}
+div.sub_title{
+    padding: 100px;
+    font-size: 1.5em;
+    font-weight: 600;
+    text-shadow: 0px 0px 22px #fff;
+    font-family: 'Noto Serif KR', serif;
+}
+div.sub_title span{
+    margin: 10px;
+    display: inline-block;
+    position: relative;
+}
+div.sub_title span:last-child{
+    display: block;
+}
+div.sub_title span:first-child::after{
+    width: 100%;
+    height: 3px;
+    content: "";
+    background: #000;
+    display: block;
+    position: absolute;
+    bottom: -15px;
+}
+section.section01 .backSpan{
+    transform: rotate(90deg);
+    text-align: left;
+    position: absolute;
+    top: 190px;
+    right: 0;
+}
+section.section01 .contents{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 70px;
+}
+.inner{ width: 80%; margin: 0 auto; }
+section.section01 .contents .photo{
+    width: 30%;
+    height: 300px;
+    background: url("../images/sub2/Songjeol-dong/Songjeol-dong2_100.png") 50% 50% no-repeat;
+    transition: .2s;
+    background-size: contain;
+    margin: 60px;
+    cursor: pointer;
+}
+section.section01 .contents .photo.click{
+    background: url("../images/sub2/Songjeol-dong/Songjeol-dong100.png") 50% 50% no-repeat;
+    background-size: contain;
+    transition: .2s;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+section.section01 .contents .exp{
+    width: 40%;
+    text-align: left;
+    padding: 70px;
+}
+.exp span{
+    display: block;
+}
+span.copy{
+    padding: 50px 0 0;
+    position: relative;
+}
+section.section01 .contents span.copy::before{
+    width: 50px;
+    height: 3px;
+    content: "";
+    display: block;
+    background: #000;
+    position: absolute;
+    top: 10px;
+}
+span.exhTitle{
+    font-size: 1.7em;
+    font-weight: 800;
+    margin: 50px 0;
+}
+span.ex{
+    font-size: 0.9em;
+}
+
+
+/* section 02 ~ 03 */
+section.section02,
+section.section03{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    background: linear-gradient(#fff 50% , #e5d7aa 50%);
+    padding: 0 10% 60px;
+}
+section.section03{
+    align-items: flex-start;
+    background: linear-gradient(#e5d7aa 50%, #fff 50%);
+    padding-top: 60px;
+}
+section.section02 .box,
+section.section03 .box{
+    width: 30%;
+    height: 800px;
+    padding: 75px;
+    background: #fff;
+    cursor: pointer;
+    /* box-shadow: 1px 1px 5px #000; */
+    box-shadow: 15px 40px 35px rgba(0,0,0,0.1);
+}
+section.section02 .box:hover{
+    margin-bottom: 50px;
+}
+section.section03 .box:hover{
+    margin-top: -50px;
+}
+section.section02 .box .exp,
+section.section03 .box .exp{
+    text-align: left;
+}
+section.section02 .box .exp span.ex,
+section.section03 .box .exp span.ex{
+    position: relative;
+}
+section.section02 .box .exp span.ex::after,
+section.section03 .box .exp span.ex::after{
+    width: 50px;
+    height: 3px;
+    content: "";
+    display: block;
+    background: #000;
+    position: absolute;
+    bottom: -40px;
+}
+section.section02 .box .photo,
+section.section03 .box .photo{
+    width: 80%;
+    height: 350px;
+    background: url("../images/sub2/Bongmyeong-dong/Bongmyeong-dong2_100.png") 50% 50% no-repeat;
+    background-size: contain;
+    margin: 50px 0;
+}
+section.section03 .box .photo{
+    background: url("../images/sub2/Shinbong-dong/Shinbong-dong100.png") 50% 50% no-repeat;
+    background-size: 80%;
+    margin: 50px 0;
+}
+section.section03 .box span.copy{
+    padding: 35px 0 0;
+}
+section.section02 .backPhoto,
+section.section03 .backPhoto{
+    width: 350px;
+    height: 350px;
+    background: url("../images/sub2/backimage_1.png") 50% 50% no-repeat;
+    background-size: contain;
+}
+section.section03 .backPhoto{
+    background: url("../images/sub2/backimage_2.png") 50% 50% no-repeat;
+    background-size: contain;
+}
+
+/* section 04 ~ 05 */
+section.section04,
+section.section05{
+    position: relative;
+    padding: 60px;
+}
+section.section04 .contents{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: right;
+}
+section.section05 .contents{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    text-align: left;
+}
+section.section04 .backSpan{
+    text-align: left;
+    position: absolute;
+    top: 260px;
+    right: 0;
+    transform: rotate(90deg);
+}
+section.section05 .backSpan{
+    transform: rotate(-90deg);
+    position: absolute;
+    text-align: right;
+    top: 230px;
+    left: 0;
+}
+section.section04 .contents span.exhTitle,
+section.section05 .contents span.exhTitle{
+    position: relative;
+}
+section.section04 .contents span.exhTitle::after{
+    width: 3px;
+    height: 50px;
+    content: "";
+    display: block;
+    background: #000;
+    position: absolute;
+    top: 0;
+    right: -40px;
+}
+section.section05 .contents span.exhTitle::before{
+    width: 3px;
+    height: 50px;
+    content: "";
+    display: block;
+    background: #000;
+    position: absolute;
+    top: 0;
+    left: -40px;
+}
+section.section04 .contents .photo{
+    width: 55%;
+    height: 530px;
+    background: url("../images/sub2/chung.png") 50% 50% no-repeat;
+    background-size: 90%;
+}
+section.section05 .contents .photo{
+    width: 40%;
+    height: 470px;
+    background: url("../images/sub2/SongSangHyun_blood.png") 50% 50% no-repeat;
+    background-size: 60%;
+}
+span.addex{
+    font-weight: 600;
+    display: block;
+    margin-bottom: 50px;
+}
+
+/* top button */
+button.topbt{
+    display: none;
+}
+
+/* footer */
+footer{
+    height: 150px;
+    background: #000;
+    padding: 50px 10% 0;
+    color: #fff;
+}
+footer .footerLogo{
+    width: 19%;
+    min-width: 300px;
+    font-size: 27px;
+    float: right;
+    text-align: center;
+    font-family: 'KOMACON';
+    color: #999;
+}
+footer .footerLogo span{
+    display: block;
+}
+footer .footerLogo span:last-child{
+    font-size: 0.3em;
+    letter-spacing: 1px;
+}
+footer .addr{
+    width: 60%;
+    font-size: 0.7em;
+    letter-spacing: -0.5px;  
+}
+footer .addr span{
+    display: block;
+}
+
+@media screen and (min-width:767px) and (max-width:1280px) {
+    body{
+        width: 90%;
+    }
+    section {
+        height: 920px;
+    }
+    section.section02 .box, section.section03 .box {
+        width: 50%;
+    }
+}

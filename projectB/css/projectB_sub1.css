@@ -1,0 +1,458 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR|Noto+Serif+KR&display=swap');
+@font-face { font-family: 'KOMACON'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.2/KOMACON.woff') format('woff'); font-weight: normal; font-style: normal; }
+*{ box-sizing: border-box; }
+body{
+    padding: 0;
+    margin: 0;
+    min-width: 1280px;
+    font-size: 16px;
+    color: #000;
+    letter-spacing: -1px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+ul,li,a{ 
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+a{
+    color: #000;
+}
+a:visited{
+    color: #000;
+}
+header, section, footer{ width: 100%; }
+
+/* header */
+header{
+    background: #fff;
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 90;
+    transition: transform 0.7s 0.3s ease;
+}
+header .topLogo{
+    width: 19%;
+    min-width: 300px;
+    font-size: 27px;
+    font-weight: 900;
+    display: block;
+    text-align: center;
+    font-family: 'KOMACON';
+}
+header .topLogo span{
+    display: block;
+}
+header .topLogo span:last-child{
+    font-size: 0.3em;
+    letter-spacing: 1px;
+}
+header .inner .mMenubt{
+    display: none;
+}
+.hideBar{
+    transform: translate(0, -100%);
+    /* y값을 -100%로 해서 숨기게 됨 */
+}
+/* nav */
+nav{
+    width: 65%;
+    height: 90px;
+    line-height: 90px;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 100;
+    transition: transform 0.7s 0.3s ease;
+}
+nav ul.gnb{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+}
+nav ul.gnb .gnbMenu{
+    width: 15%;
+    font-weight: 800;
+    position: relative;
+    color: #374369;
+}
+
+/* moble ver sub menu */
+nav ul.gnb .gnbMenu .mSnb{
+    display: none;
+}
+
+/* PC ver sub menu */
+nav .subMenu{
+    display: flex;
+    justify-content: space-between;
+    width: 0;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.9);
+    overflow: hidden;
+    position: absolute;
+    top: 90px;
+    right: 0;
+    z-index: 100;
+}
+nav ul.gnb:hover .subMenu{
+    width: 100%;
+    height: 100vh;
+    transition: all 0.5s ease-in-out;
+}
+nav .subMenu ul{
+    width: 15%;
+}
+nav .subMenu ul li{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #000;
+}
+nav .subMenu ul li a{
+    color: #000;
+    position: relative;
+}
+nav .subMenu ul li a:visited{
+    color: #000;
+}
+nav .subMenu ul li a::after{
+    width: 0px;
+    height: 1px;
+    background: #000;
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+nav .subMenu ul li a:hover::after{
+    width: 100%;
+    transition: width .3s ease-in-out;
+}
+
+section{
+    height: 100vh;
+    position: relative;
+    text-align: center;
+}
+/* section01 */
+section.section01{
+    height: 3640px;
+    position: relative;
+    background-attachment: fixed;
+    background-image: url("../images/sub1/sub1_background.png");
+    background-position: -50% 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+div.sub_title{
+    padding: 200px;
+    font-size: 1.5em;
+    font-weight: 600;
+    text-shadow: 0px 0px 22px #fff;
+    font-family: 'Noto Serif KR', serif;
+}
+div.sub_title span{
+    margin: 10px;
+    display: inline-block;
+    position: relative;
+}
+div.sub_title span:last-child{
+    display: block;
+}
+div.sub_title span:first-child::after{
+    width: 100%;
+    height: 3px;
+    content: "";
+    background: #000;
+    display: block;
+    position: absolute;
+    bottom: -15px;
+}
+.colorB{
+    width: 55%;
+    height: 650px;
+    background: #e5d7aa;
+    padding: 2%;
+    margin: 50px;
+    float: left;
+}
+.colorB.right{
+    float: right;
+}
+.colorB.blue{
+    background: #374369;
+}
+.colorB .borderB{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+    padding: 2%;
+}
+.colorB.blue .borderB{
+    border: 1px solid #fff;
+    color: #fff;
+}
+.colorB .borderB .box_t{
+    text-align: left;
+    margin: 0 3% 1%;
+}
+.colorB .borderB .box_t span{
+    display: block;
+}
+.colorB .borderB .box_t span:first-child{
+    font-size: 0.8em;
+}
+.colorB .borderB .box_t span:nth-child(2),
+.colorB .borderB .box_t span:nth-child(3){
+    font-size: 1.3em;
+    font-weight: 500;
+}
+.colorB .borderB .box_p{
+    width: 522px;
+    height: 300px;
+    margin: 0 3% 3%;
+    background: url("../images/sub1/baekjeVillage.jpg") 50% 50% no-repeat;
+    background-size: 522px 300px;
+}
+.colorB.right .borderB .box_p{
+    background: url("../images/sub1/baekje_village.jpg") 50% 50% no-repeat;
+    background-size: 522px 300px;
+}
+.colorB .borderB .box_c{
+    font-size: 0.9em;
+    letter-spacing: -1px;
+    text-align: left;
+    padding: 0 3% 3%;
+    position: relative;
+}
+.colorB .borderB .box_c span::before{
+    width: 3px;
+    height: 20px;
+    content: "";
+    background: #000;
+    display: block;
+    position: absolute;
+    left: 0;
+}
+.colorB.blue .borderB .box_c span::before{
+    background: #fff;
+}
+.colorB.blue .borderB .box_p{
+    width: 522px;
+    height: 300px;
+    margin: 3%;
+    background: url("../images/sub1/cjExhibiton.jpg") 50% 50% no-repeat;
+    background-size: 522px 300px;
+}
+.colorB.right.blue .borderB .box_p{
+    background: url("../images/sub1/cjExhibiton_out.jpg") 50% 50% no-repeat;
+    background-size: 522px 300px;
+}
+div.backSpan{
+    display: inline-block;
+    transform: rotate(90deg);
+    text-align: left;
+    position: absolute;
+    right: 0;
+    top: 18.5%;
+}
+div.backSpan span{
+    display: block;
+}
+div.backSpan.two{
+    top: 59.8%;
+}
+
+/* section02 */
+section.section02{
+    position: relative;
+    height: 900px;
+}
+section.section02 .sub_title,
+section.section03 .sub_title{
+    padding: 70px 0;
+}
+section.section02 .slide{
+    width: 100%;
+    /* overflow: hidden; */
+    position: relative;
+}
+/* Carousel */
+ul.container{
+    width: 80%;
+    margin: 50px auto 0;
+    display: flex;
+    flex-direction: column;
+}
+ul.container li{
+    width: 100%;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+ul.container li span.year{
+    width: 10%;
+    float: left;
+    font-size: 1.5em;
+    line-height: 24px;
+    color: #374369;
+    letter-spacing: 3px;
+    margin: 7px 0;
+}
+ul.container li span.check{
+    width: 20%;
+    display: block;
+    padding: 0 1px;
+    margin: 1px 0;
+    font-size: 1em;
+    line-height: 35px;
+    text-align: center;
+    background-color: #374369;
+    color: #fff;
+}
+ul.container li span.ex{
+    display: block;
+    float: right;
+    width: 58%;
+    height: 100%;
+    padding: 3px 50px;
+    text-align: left;
+    font-size: 0.9em;
+    background: #e5d7aa;
+}
+ul.container li span.same{
+    color: #fff;
+}
+
+/* section03 */
+section.section03{
+    position: relative;
+    height: 1050px;
+}
+.lrAlign{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+section.section03 .map{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+section.section03 .map_addr{
+    display: inline-block;
+    text-align: left;
+    font-size: 0.9em;
+    letter-spacing: 0px;
+    margin: 50px auto 0;
+}
+section.section03 .map_addr .map_left,
+section.section03 .map_addr .map_right{
+    display: inline-block;
+}
+section.section03 .map_addr .map_right{
+    margin-left: 10px;
+}
+section.section03 .map_addr .material-icons{
+    font-size: 0.9em;
+}
+section.section03 .map_addr div:first-child .material-icons{
+    transform: rotate(180deg);
+}
+section.section03 .map_addr span{
+    font-weight: 600;
+}
+section.section03 table{
+    width: 46%;
+    height: 570px;
+    margin: 1%;
+    border-collapse: collapse;
+    letter-spacing: -1px;
+}
+section.section03 table tr{
+    /* border-bottom: 3px solid #374369; */
+}
+section.section03 table tr th{
+    width: 18%;
+    color: #374369;
+    border-right: 3px solid #374369;
+}
+section.section03 table tr td{
+    text-align: left;
+    padding: 20px;
+    /* border: 1px solid #374369; */
+}
+
+/* top button */
+button.topbt{
+    display: none;
+}
+
+/* footer */
+footer{
+    height: 150px;
+    background: #000;
+    padding: 50px 10% 0;
+    color: #fff;
+}
+footer .footerLogo{
+    width: 19%;
+    min-width: 300px;
+    font-size: 27px;
+    float: right;
+    text-align: center;
+    font-family: 'KOMACON';
+    color: #999;
+}
+footer .footerLogo span{
+    display: block;
+}
+footer .footerLogo span:last-child{
+    font-size: 0.3em;
+    letter-spacing: 1px;
+}
+footer .addr{
+    width: 60%;
+    font-size: 0.7em;
+    letter-spacing: -0.5px;
+}
+footer .addr span{
+    display: block;
+}
+
+/* tablet ver */
+@media screen and (min-width:767px) and (max-width:1280px) {
+    body{
+        width: 90%;
+    }
+    section.section01{
+        background-position: 60% 0%;
+        background-repeat: no-repeat;
+        background-size: auto;
+    }
+    section.section02{
+        height: 950px;
+    }
+    section.section03{
+        height: 1800px;
+    }
+    .lrAlign{
+        margin: 50px 0;
+        flex-direction: column;
+    }
+}
