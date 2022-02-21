@@ -1,0 +1,1085 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700,900&display=swap&subset=korean');
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+KR:400,500,600,700,900&display=swap&subset=korean');
+
+*{box-sizing: border-box;}
+body{
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: -0.2px;
+    font-family: 'Noto Sans KR', sans-serif;
+    position: relative;
+}
+ul, li{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+a{
+    color: #000;
+    text-decoration: none;
+}
+a:visited{
+    color: #000;
+}
+i.material-icons{
+    padding: 0;
+    margin: 0;
+}
+/* cover */
+.cover{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}
+.cover.on{
+    display: block;
+}
+/* header */
+header{
+    width: 80%;
+    height: 60px;
+    padding: 0 20px 0 20px;
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 0px 0px 20px rgba(180,180,180,0.5);
+}
+header a{
+    width: 60px;
+    height: 60px;
+    background: url("../images/home/E1_logo.png") 50% 50% no-repeat;
+    background-size: 100%;
+    z-index: 3 !important;
+}
+header .openBt{
+    width: 65px;
+    height: 100%;
+    display: block;
+    cursor: pointer;
+    z-index: 3 !important;
+}
+header i.material-icons{
+    padding: 0;
+    margin: 0;
+    font-size: 50px;
+    margin-top: 5px;
+    color: #ec6700;
+}
+/* nav */
+nav{
+    width: 80%;
+    position: absolute;
+    top: 30px;
+    left: 10%;
+    line-height: 60px;
+    font-weight: 700;
+    z-index: 2;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0px 0px 20px rgba(180,180,180,0.5);
+}
+nav ul li a:hover{
+    color: #ec6700;
+}
+ul.gnb{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 10% 0 15%;
+    display: flex;
+    justify-content: space-between;
+}
+li.gnbMenu, li.subMenu ul li{
+    width: 120px;
+}
+.color a{
+    color: #ec6700;
+}
+/* mobile menu */
+.Mmenu{
+    display: none;
+}
+/* subpage tab style */
+ul.tabMenu{
+    width: 80%;
+    height: 60px;
+    line-height: 60px;
+    position: absolute;
+    top: 90px;
+    left: 10%;
+    display: flex;
+    padding: 0 20%;
+    justify-content: space-between;
+    background: #fff;
+    box-shadow: 0px 0px 20px rgba(180,180,180,0.5);
+    z-index: 1;
+}
+ul.tabMenu li{
+    width: 120px;
+    cursor: pointer;
+}
+.click{
+    height: 3px;
+    width: 120px;
+    background: #ec6700;
+    width: 0px;
+}
+ul.tabMenu .tablinkOn .click{
+    width: 100%;
+    transition: width .5s ease;
+}
+.tabMenu.fixBar{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    background: #fff;
+    z-index: 2;
+}
+.tabMenu_line{
+    width: 0;
+    height: 3px;
+    position: absolute;
+    left: 0;
+    margin: 0 20%;
+    bottom: 0;
+    background: #78d2d5;
+}
+/* PC ver subMenu */
+li.subMenu{
+    width: 80%;
+    height: 0px;
+    padding: 0 8% 0 12%;
+    background: rgba(255, 255, 255, 0.8);
+    border-top: 2px solid #ec6700;
+    position: absolute;
+    top: 90px;
+    left: 10%;
+    display: none;
+    justify-content: space-between;
+    overflow: hidden;
+    z-index: 2;
+}
+li.subMenu ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: space-between;
+    line-height: 50px;
+}
+li.subMenu.on{
+    display: flex; 
+    height: 400px;
+    transition: all 1s ease;
+}
+li.subMenu i.material-icons{
+    font-size: 20px;
+    position: absolute;
+    top: 3.5%;
+    right: 10%;
+    cursor: pointer;
+}
+
+/* section fullsize video */
+section.fullsize{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -2;
+}
+.art1, .art2{
+    height: 250px;
+    position: absolute;
+    z-index: 0;
+}
+.art3, .art4{
+    width: 9%;
+    height: 44px;
+    position: absolute;
+    z-index: 0;
+}
+.art1{
+    width: 30%;
+    bottom: 60%;
+    right: 11%;
+    background: rgba(255, 255, 255, 0.6);
+    height: 44px;
+    overflow: hidden;
+    transition: .3s ease-in-out;
+}
+.artTitle{
+    height: 44px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+.artTitle i.material-icons{
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+.artTitle span:first-child{
+    width: 100%;
+    text-align: left;
+}
+/* counting */
+.container{
+    border-top: 1px solid #000;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 10%;
+}
+.col{
+    display: flex;
+    width: 10%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.row .col span{
+    font-size: 0.8em;
+}
+.counting{
+    color: #222;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+.art2{
+    width: 30%;
+    top: 41%;
+    right: 11%;
+    background: rgba(236, 103, 0, 0.6);
+    color: #fff;
+    height: 44px;
+    overflow: hidden;
+    transition: .3s ease-in-out;
+}
+.art2 ul{
+    border-top: 1px solid #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+}
+.art2 ul li{
+    color:#fff;
+    font-size:0.9em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.art2 ul li span{
+    display: block;
+}
+.rotate{
+    transform: rotate(-45deg);
+    transition: .3s ease-in-out;
+}
+.height{
+    height: 250px;
+}
+.art3{
+    bottom: 39%;
+    right: 10%;
+    background: rgba(255, 255, 255, 0.6);
+}
+.art4{
+    bottom: 33%;
+    right: 10%;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+/* subPage section01 - 기업소개 */
+section.box.section01, 
+section.box.section02,
+section.box.section03,
+section.box.section04{
+    width: 100%;
+    position: relative;
+    display: none;
+}
+section.box.on{ display: block; }
+
+/* subPage section01 - 기업소개 about*/
+.box .boxart{
+    width: 100%;
+    height: 100vh;
+    padding: 230px 15% 0;
+}
+.boxTitle{
+    display: block;
+    margin: 20px 0;
+    font-weight: 800;
+    font-size: 1.2em;
+}
+.box .boxart .cards{
+    padding: 3%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.card01, .card02, .card03{
+    width: 30%;
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 20px rgba(180,180,180,0.5);
+}
+.cardPhoto{
+    height: 250px;
+}
+.card01 .cardPhoto{
+    background:url("../images/safety.jpg") 65% 50% no-repeat;
+    background-size: 215%;
+}
+.card02 .cardPhoto{
+    background:url("../images/environment2.jpg") 40% 50% no-repeat;
+    background-size: 200%;
+}
+/* photo by David Alberto Carmona Coto , Pexels */
+.card03 .cardPhoto{
+    background:url("../images/global.jpg") 50% 50% no-repeat;
+    background-size: 100%;
+}
+.cardContent{
+    height: 250px;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+.cardContent .cardTitle{
+    font-weight: 700;
+    padding-bottom: 10%;
+}
+.cardContent span{
+    display: block;
+}
+.cardContent span:nth-child(2){
+    font-weight: 700;
+    font-size: 0.8em;
+    color: #78d2d5;
+}
+.cardContent span:last-child{
+    padding: 3%;
+    font-size: 0.7em;
+}
+
+/* subPage section01 - 기업소개 idealogy */
+.box .boxart2{
+    width: 100%;
+    height: 100vh;
+    padding: 70px 15% 0;
+}
+.idealogy{
+    width: 25%;
+    margin: 0 auto;
+    height: 15%;
+    background: url("../images/txt_vision.png") 50% 50% no-repeat;
+    background-size: contain;
+}
+.value{
+    width: 100%
+}
+.valueT{
+    font-weight: 700;
+}
+.valueT::after{
+    content: "";
+    display: block;
+    width: 10%;
+    height: 1px;
+    background: #000;
+    margin: 15px auto 0;
+}
+.value .content{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 30px 0;
+}
+.value .content .flipCard{
+    background-color: transparent;
+    width: 24%;
+    height: 100px;
+    perspective: 1000px;
+}
+.flipCard-inner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+.flipCard:hover .flipCard-inner{
+    transform: rotateY(180deg);
+}
+.bf{
+    background-color: #ec6700;
+    color: #fff;
+}
+.aft{
+    background-color: #78d2d5;
+    color: white;
+    transform: rotateY(180deg);
+}
+.flipCard .bf, 
+.flipCard .aft{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    line-height: 90px;
+    font-weight: 600;
+}
+.boxCons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.boxCon{
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.boxCon .boxPhoto{
+    width: 100%;
+    height: 200px;
+}
+.boxCon:nth-child(1) .boxPhoto{
+    background: url("../images/mission.jpg") 50% 50% no-repeat;
+    background-size: cover;
+}
+.boxCon:nth-child(2) .boxPhoto{
+    background: url("../images/vision.jpg") 50% 50% no-repeat;
+    background-size: cover;
+}
+.boxCon:nth-child(3) .boxPhoto{
+    background: url("../images/strategy.jpg") 50% 50% no-repeat;
+    background-size: cover;
+}
+.boxCon:nth-child(4) .boxPhoto{
+    background: url("../images/vision2.jpg") 50% 50% no-repeat;
+    background-size: cover;
+}
+.boxCon .boxT{
+    margin-top: 32px;
+    font-weight: 700;
+}
+.boxCon .boxPhoto::after{
+    content: "";
+    display: block;
+    width: 30%;
+    height: 1px;
+    background: #000;
+    margin: 270px auto 0;
+}
+.c1, .c2, .c3, .c4{
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 25px;
+    background: #f0e15f;
+    position: absolute;
+    top: 175px;
+}
+.boxCon .boxContent{
+    height: 200px;
+    padding: 0 15%;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.boxContent span{
+    display: block;
+}
+/* subPage section01 - 기업소개  organization*/
+.orgaPhoto{
+    width: 100%;
+    height: 750px;
+    background: url("../images/organization.png") 50% 50% no-repeat;
+    background-size: 100%;
+    margin: 0 auto;
+}
+
+/* subPage section02 - CEO 인사말 */
+.box .boxart3{
+    width: 100%;
+    padding: 230px 15% 0;
+}
+.rowcon{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0 10%; 
+}
+.ceo_photo{
+    width: 60%;
+    height: 640px;
+    background: url("../images/owner.png") 50% 50% no-repeat;
+    background-size: contain;
+}
+.ceo_message{
+    font-family: 'Noto Serif KR', serif;
+    text-align: left;
+    padding: 0 5%;
+}
+.ceo_message span{
+    display: block;
+}
+.ceo_message span:first-child{
+    font-size: 3em;
+    color: #ec6700;
+}
+.ceo_message span:nth-child(2){
+    font-size: 1.5em;
+    margin: 20px 0;
+}
+.ceo_message_detail{
+    padding: 0 15%;
+    text-align: justify;
+}
+.ceo_sign{
+    width: 100%;
+    padding: 0 16%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: end;
+}
+.ceo_sign span{
+    display: block;
+}
+.sign{
+    width: 7%;
+    height: 500px;
+    background: url("../images/img_ceo.png") 50% 50% no-repeat;
+}
+
+/* subPage section03 - 연혁 history */
+/* timeline */
+.timeline{
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.timeline::after{
+    content: "";
+    position: absolute;
+    width: 3px;
+    background: #eb6d70;
+    top: 20px;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    z-index: 0;
+}
+.timeContainer{
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    z-index: 1;
+}
+.timeContainer::after{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -12px;
+    background: #fff;
+    border: 4px solid #eb6d70;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+.left{
+    left: 0;
+    text-align: right;
+}
+.right{
+    left: 50%;
+    text-align: left;
+}
+.left::before{
+    content: "";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 0;
+    right: 30px;
+    border: medium solid #fff;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #fff;
+}
+.right::before{
+    content: "";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 0;
+    left: 30px;
+    border: medium solid #fff;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #fff transparent transparent;
+}
+.right::after{
+    left: -16px;
+}
+.timeCon{
+    padding: 20px 30px;
+    background-color: #fff;
+    position: relative;
+    border-radius: 6px;
+}
+.timeCon p{
+    line-height: 30px;
+}
+/* history table */
+button{
+    border: none;
+    background: none;
+    outline: none;
+}
+button.more2010, 
+button.more2000, 
+button.more1990, 
+button.more1980{
+    width: 100%;
+    height: 100px;
+    padding: 0;
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+.section03 table{
+    width: 70%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+.section03 thead tr{
+    border-top: 2px solid #eb6d70;
+}
+.section03 thead th{
+    height: 60px;
+}
+.section03 tbody{
+    background: rgba(255, 255, 255, 0.8);
+}
+.section03 tbody tr{
+    height: 50px;
+    border-bottom: 1px solid rgba(235, 109, 112, 0.2);
+}
+.section03 tbody th{
+    width: 30%;
+    font-size: 2em;
+}
+.section03 tbody tr:last-child
+.section03 tbody th.last{
+    border-bottom: 2px solid #eb6d70;
+}
+.section03 tbody td:nth-child(2){
+    width: 20%;
+}
+.section03 tbody td:last-child{
+    width: 50%;
+}
+.y2010, .y2000, .y1990, .y1980{
+    display: none;
+}
+button.topBt{
+    width: 100%;
+    height: 100px;
+    margin: 50px 0;
+}
+button.topBt i.material-icons{
+    color: #eb6d70;
+    font-size: 5em;
+    cursor: pointer;
+}
+
+/* subPage section04 - 사업장안내 */
+/* internal map 국내 사업장 */
+.internal_map button,
+.external_map button{
+    width: 100px;
+    height: 60px;
+    border-radius: 20px/50px;
+    color: #fff;
+    background: #555;
+    cursor: pointer;
+    letter-spacing: -1px;
+}
+.internal_map button:hover,
+.external_map button:hover{
+    background: #fff;
+    color: #000;
+}
+.internal_map button.displayOn,
+.external_map button.displayOn{
+    background: #fff;
+    color: #000;
+}
+.headButton.displayOn{
+    border: 1px solid #eb6d70;
+}
+.branchButton.displayOn{
+    border: 1px solid #78d2d5;
+}
+.baseButton.displayOn{
+    border: 1px solid #ec6700;
+}
+.internal_map .map{
+    width: 300px;
+    height: 600px;
+    margin: 0 auto;
+    background: url("../images/map/korean.png") 50% 50% no-repeat;
+    background-size: 100%;
+    position: relative;
+}
+.head_pin{
+    width: 30px;
+    height: 50px;
+    background: url("../images/map/pin/pin_eb6d70.png") 50% 50% no-repeat;
+    background-size: 100%;
+}
+.map_ex{
+    width: 450px;
+    padding: 6px;
+    background: rgba(255,255,255,0.5);
+    border: 1px solid #ddd;
+    color: #777;
+    letter-spacing: -1.2px;
+    font-size: 0.9em;
+    position: absolute;
+}
+.map_ex span{
+    display: block;
+}
+.Seoul .map_ex{
+    top: 39px;
+    left: 105px;
+}
+.Busan .map_ex{
+    bottom: 202px;
+    right: -430px;
+}
+.Gwangju .map_ex{
+    bottom: 202px;
+    left: -395px;
+}
+.Daegu .map_ex{
+    bottom: 294px;
+    right: -390px;
+}
+.Daejeon .map_ex{
+    bottom: 300px;
+    left: -354px;
+}
+.Gangwon .map_ex{
+    bottom: 441px;
+    right: -329px;
+}
+.view{
+    position: absolute;
+}
+.view.Seoul{
+    top: 90px;
+    left: 70px;
+}
+.view.Busan{
+    bottom: 193px;
+    right: 27px;
+}
+.view.Gwangju{
+    bottom: 193px;
+    left: 63px;
+}
+.view.Daegu{
+    bottom: 263px;
+    right: 64px;
+}
+.view.Daejeon{
+    bottom: 310px;
+    left: 100px;
+}
+.view.Gangwon{
+    bottom: 410px;
+    right: 125px;
+}
+.branch_pin{
+    width: 30px;
+    height: 50px;
+    background: url("../images/map/pin/pin_78d2d5.png") 50% 50% no-repeat;
+    background-size: 100%;
+}
+.view.Daesan{
+    top: 165px;
+    left: 31px;
+}
+.view.Incheon{
+    top: 98px;
+    left: 42px;
+}
+.view.Yeosu{
+    bottom: 150px;
+    left: 125px;
+}
+.base_pin{
+    width: 30px;
+    height: 50px;
+    background: url("../images/map/pin/2pin_ec6700.png") 50% 50% no-repeat;
+    background-size: 100%;
+}
+
+.internal_map .Seoul,
+.internal_map .Busan,
+.internal_map .Gwangju,
+.internal_map .Daegu,
+.internal_map .Daejeon,
+.internal_map .Gangwon,
+.internal_map .Daesan,
+.internal_map .Incheon,
+.internal_map .Yeosu{
+    display: none;
+}
+.Seoul.displayOn,
+.Busan.displayOn,
+.Gwangju.displayOn,
+.Daegu.displayOn,
+.Daejeon.displayOn,
+.Gangwon.displayOn,
+.Daesan.displayOn,
+.Incheon.displayOn,
+.Yeosu.displayOn,
+.side_box.displayOn{
+    display: block;
+}
+.internal_map .Daesan .map_ex{
+    top: 167px;
+    left: -426px;
+}
+.internal_map .Incheon .map_ex{
+    top: 77px;
+    left: -414px;
+}
+.internal_map .Yeosu .map_ex{
+    bottom: 89px;
+    left: -36px;
+}
+.section04 table{
+    display: none;
+}
+
+/* external map 해외 사업장 */
+.external_map{
+    position: relative;
+}
+.external_map .map{
+    width: 600px;
+    height: 600px;
+    margin: 20px auto;
+    position: relative;
+}
+.external_map .map_ex{
+    right: 5%;
+    bottom: 0%;
+}
+.external_map .external_pin{
+    width: 30px;
+    height: 50px;
+    position: absolute;
+}
+.Dubai,
+.Singapore,
+.Huston{
+    display: none;
+}
+.Dubai .map{
+    background: url("../images/map/dubai.png") 50% 50% no-repeat;
+    background-size: 100%;
+}
+.Singapore .map{
+    background: url("../images/map/singapore.png") 50% 50% no-repeat;
+    background-size: 100%;
+}
+.Huston .map{
+    background: url("../images/map/usa.png") 50% 50% no-repeat;
+    background-size: 100%;
+}
+.Dubai .map .external_pin{
+    background: url("../images/map/pin/pin_f0e15f.png") 50% 50% no-repeat;
+    background-size: 100%;
+    top: 154px;
+    right: 130px;
+}
+.Singapore .map .external_pin{
+    background: url("../images/map/pin/pin_f0e15f.png") 50% 50% no-repeat;
+    background-size: 100%;
+    bottom: 255px;
+    right: 281px;
+}
+.Huston .map .external_pin{
+    background: url("../images/map/pin/pin_f0e15f.png") 50% 50% no-repeat;
+    background-size: 100%;
+    bottom: 182px;
+    left: 307px;
+}
+.mapOn{
+    display: block !important;
+}
+.dubaiButton.displayOn,
+.singaporeButton.displayOn,
+.hustonButton.displayOn{
+    border: 1px solid #f0e15f;
+}
+
+/* footer */
+footer{
+    height: 150px;
+    background: #222;
+    padding: 37px 15%;
+    position: relative;
+}
+footer .logo{
+    width: 60px;
+    height: 60px;
+    background: url("../images/home/E1_logo-gray.png") 50% 50% no-repeat;
+    background-size: 100%;
+    float: right;
+}
+footer .tel{
+    width: 80%;
+    font-size: 0.9em;
+    color: #fff;
+    text-align: left;
+    float: left;
+}
+footer a:visited{
+    color: #fff;
+}
+
+/*icon*/
+div.icon{
+    width: 68px;
+    height: 90px;
+}
+.corporation{
+    background: url("../images/home/2.png") 0% 50% no-repeat;
+    background-size: cover;
+}
+.stock{
+    background: url("../images/home/2.png") 32.5% 50% no-repeat;
+    background-size: cover;
+}
+.employee{
+    background: url("../images/home/2.png") 66% 50% no-repeat;
+    background-size: cover;
+}
+.sales{
+    background: url("../images/home/2.png") 100% 50% no-repeat;
+    background-size: cover;
+}
+
+/* tablet ver */
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    body{
+        font-size: 14px;
+        position: relative;
+    }
+    /* subMenu */
+    li.subMenu ul{
+        width: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        line-height: 50px;
+    }
+    /* subPage section02 - CEO 인사말 */
+    .rowcon{
+        flex-direction: column;
+        align-items: center;
+    }
+    .ceo_photo{
+        width: 85%;
+        background-size: cover;
+    }
+    .ceo_message{
+        width: 100%;
+    }
+    /* subPage section03 - 연혁 history */
+    .timeCon{
+        padding: 20px 0;
+    }
+    .map_ex{
+        width: 390px;
+    }
+    .Seoul .map_ex{
+        top: 39px;
+        left: 105px;
+    }
+    .Busan .map_ex{
+        bottom: 202px;
+        right: -380px;
+    }
+    .Gwangju .map_ex{
+        bottom: 202px;
+        left: -337px;
+    }
+    .Daegu .map_ex{
+        bottom: 294px;
+        right: -340px;
+    }
+    .Daejeon .map_ex{
+        bottom: 300px;
+        left: -304px;
+    }
+    .Gangwon .map_ex{
+        bottom: 441px;
+        right: -275px;
+    }
+    .internal_map .Daesan .map_ex{
+        top: 167px;
+        left: -362px;
+    }
+    .internal_map .Incheon .map_ex{
+        top: 77px;
+        left: -354px;
+    }
+    .internal_map .Yeosu .map_ex{
+        bottom: 89px;
+        left: -6px;
+    }
+    .section04 table{
+        display: block;
+    }
+}

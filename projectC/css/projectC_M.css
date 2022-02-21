@@ -1,0 +1,322 @@
+@charset "UTF-8";
+body{
+    min-width: 640px;
+    font-size: 14px;
+    position: relative;
+}
+header{
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 3;
+}
+header.fixBar{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background: #fff;
+}
+/* mobile nav */
+nav{
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    line-height: 30px;
+    background: #fff;
+    text-align: right;
+    padding: 25% 15% 0;
+    display: none;
+    z-index: 2;
+}
+nav.on{
+    display: block;
+}
+nav.fixBar{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+ul.gnb{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    flex-direction: column;
+}
+li.gnbMenu{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+li.gnbMenu .gmTitle{
+    width: 23%;
+    font-size: 1.1em;
+    text-align: left;
+}
+.Mmenu{
+    width: 77%;
+    padding: 0 23px 0 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: left;
+    color: #999;
+}
+.Mmenu li{
+    margin-left: 20px;
+}
+.Mmenu i.material-icons{
+    position: absolute;
+    right: 15%;
+}
+.Mmenu li a{
+    color: #999;
+}
+/* tabMenu 고정하기 */
+ul.tabMenu{
+    padding: 0 10%;
+}
+.tabMenu.fixBar {
+    width: 100%;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    margin: 0;
+    background: #fff;
+}
+/* PC용 서브메뉴 감추기 */
+li.subMenu{
+    display: none;
+}
+/* section */
+section.fullsize{
+    background: url("../images/yuna_main.jpg") 50% 50% no-repeat;
+    background-size: cover;
+}
+section.fullsize iframe{
+    display: none;
+}
+/* article */
+.articles{
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+}
+.art1, .art2{
+    width: 80%;
+}
+.col{
+    width: 15%;
+}
+.art2 ul{
+    height: 90%;
+}
+.art2 ul li{
+    height: 15%;
+}
+
+/* subPage section01 - 기업소개 about */
+.box .boxart{
+    padding: 150px 10% 0;
+    height: inherit;
+}
+.box .boxart .cards{
+    flex-direction: column;
+}
+.card01, .card02, .card03{
+    width: 100%;
+    flex-direction: row;
+}
+.card01 .cardPhoto{
+    background-size: 230%;
+}
+.card02, .card03{
+    margin-top: 35px;
+}
+.cardPhoto{
+    width: 50%;
+}
+.cardContent{
+    width: 50%;
+}
+
+/* subPage section01 - 기업소개 idealogy */
+.idealogy{
+    width: 60%;
+}
+.value .content .flipCard{
+    height: 90px;
+    perspective: 1000px;
+}
+.boxCon .boxContent{
+    padding: 0 1%;
+    letter-spacing: -0.5px;
+}
+
+/* subPage section01 - 기업소개  organization */
+.orgaPhoto{
+    background: url("../images/M_organization.png") 50% 50% no-repeat;
+    background-size: contain;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* subPage section02 - CEO 인사말 */
+.box .boxart3{
+    width: 100%;
+    padding: 230px 10% 0;
+}
+.rowcon{
+    flex-direction: column;
+    align-items: center;
+}
+.ceo_photo{
+    width: 100%;
+    height: 600px;
+}
+.ceo_message{
+    padding: 0;
+    letter-spacing: -0.9px;
+}
+.ceo_message_detail{
+    padding: 0 10%;
+}
+
+/* subPage section03 - 연혁 History */
+.timeline::after{
+    left: 20%;
+}
+.timeCon {
+    padding: 0;
+    letter-spacing: -1px;
+}
+.timeContainer{
+    width: 90%;
+    padding-left: 160px;
+    padding-right: 25px;
+}
+.timeContainer::before{
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+.left{
+    left: 0;
+    text-align: left;
+}
+.right{
+    left: 0;
+}
+.left::after, .right::after{
+    left: 19.5%;
+}
+.section03 table{
+    width: 80%;
+}
+.section03 tbody th{
+    width: 20%;
+    font-size: 25px;
+}
+/* .section03 tbody td{
+    padding-left: 25px;
+} */
+.section03 tbody td:nth-child(2){
+    width: 10%;
+    padding: 5px;
+}
+.section03 tbody td:last-child{
+    width: 60%;
+    text-align: left;
+}
+
+/* subPage section04 - 사업장안내 */
+/* internal map 국내 사업장 */
+.internal_map button{
+    display: none;
+}
+.internal_map .Seoul,
+.internal_map .Busan,
+.internal_map .Gwangju,
+.internal_map .Daegu,
+.internal_map .Daejeon,
+.internal_map .Gangwon,
+.internal_map .Daesan,
+.internal_map .Incheon{
+    display: block;
+}
+.internal_map .map_ex{
+    display: none;
+}
+.view{
+    display: block;
+}
+
+/* external map 해외 사업장 */
+.section04 table{
+    display: block;
+    width: 100%;
+    background: rgba(255,255,255,0.5);
+    margin-top: 50px;
+    border-collapse: collapse;
+}
+.section04 table th,
+.section04 table td{
+    border: 1px solid #ddd;
+    padding: 1%;
+}
+.external_map{
+    height: 700px;
+}
+.external_map .map{
+    width: 400px;
+    height: 500px;
+    margin: 0 auto;
+}
+.Dubai .map .external_pin{
+    top: 140px;
+    right: 82px;
+}
+.Singapore .map .external_pin{
+    bottom: 218px;
+    right: 181px;
+}
+.Huston .map .external_pin{
+    bottom: 170px;
+    left: 200px;
+}
+.external_map .map_ex{
+    right: 0;
+    bottom: 17%;
+}
+
+/* footer */
+footer{
+    position: relative;
+    margin-top: 10%;
+    padding: 5% 15%;
+    background-size: 100% 100%;
+}
+footer .tel{
+    font-size: 0.9em;
+    color: #fff;
+    text-align: left;
+    float: left;
+}
+/* .row{
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+}
+.col{
+    width: 40%;
+    flex-direction: row;
+    justify-content: unset;
+}
+.counting{
+    margin-left: auto;
+} */
